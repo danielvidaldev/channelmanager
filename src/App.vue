@@ -1,26 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Layout>
+    <h1 class="font-semibold text-xl">Channels</h1>
+    <ChannelManager />
+  </Layout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ChannelManager from './components/ChannelManager.vue'
+import Layout from './layouts/Layout.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ChannelManager,
+    Layout,
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
