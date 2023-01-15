@@ -3,20 +3,14 @@
     <input type="text" class="bg-gray-300 border border-gray-300 rounded-full placeholder:text-black/80 py-2 pl-10 pr-5" 
       placeholder="Add channel" 
       v-model="$store.state.inputValue" 
-      @keyup.enter="$store.commit('addItem')">
-    <!-- <button @click.prevent="$store.commit('randomize')">Randomize</button>
-    <font-awesome-icon :icon="[$store.state.icon.prefix, $store.state.icon.iconName]" /> -->
+      @keyup.enter="$store.commit('addItem')"
+    >
     <div class="flex flex-col h-[280px] grow-0 py-2 px-4 overflow-y-auto">
-      <!-- <button @click.prevent="$store.commit('increment')">state</button>
-      {{ $store.state.count }} -->
       <draggable :list="$store.state.items" @end="$store.state.dragged=true" item-key="id" class="space-y-3">
         <template #item="{element}">
           <Item :text="element.name" :prefix="element.prefix" :icon="element.icon" :id="element.id"/>
         </template>
       </draggable>
-              <!-- <template v-for="(item, index) in $store.state.items" :key="index"> -->
-          <!-- <Item :text="item.name" :prefix="item.prefix" :icon="item.icon" :id="index"/> -->
-           <!-- </template> -->
     </div>
     <div v-if="$store.state.dragged" class="flex justify-end items-end sticky space-x-3 w-full">
       <Button :style="'white'" @click.prevent="$store.commit('cancelOrder')">Cancel</Button>

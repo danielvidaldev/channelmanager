@@ -6,7 +6,6 @@ const iconsList = {
   ...solid,
   ...brands
 };
-// console.log(iconsList)
 
 export default createStore({
   state: {
